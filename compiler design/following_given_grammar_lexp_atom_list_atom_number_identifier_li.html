@@ -1,0 +1,34 @@
+<div class="rating"><h3 style="background-color:powderblue;">Likes =1</h3><h3 style="background-color:powderblue;">Dislikes =0</h3></div><style>.rating{font-size:20px;font-family:"Courier New";text-align-last: justify;margin-right: 100px;font-weight: bolder;}</style><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><style>h1 ,.rating, .container {width:1000;margin-left: auto;margin-right: auto;max-width: border-box}.Question {width:1000;margin-left: auto;margin-right: auto;max-width: border-box}div {width: 100vh;}img{max-width: 100%;height: auto;}.Question, .container {background-color:white;box-shadow: 0 0 2px 0px #666;border-radius: 5px;padding: 20px;margin-bottom: 1rem;} body{background-color:#F5F5F5;}</style></head><div class="question"><p><strong>Question</strong></p><p>How do I do for the following for the given grammar:<br/><br/>lexp ---&gt; atom | list<br/>atom ---&gt; number | identifier<br/>list ---&gt; ( lexp - seq )<br/>lexp - seq ---&gt; lexp - seq lexp | lexp<br/><br/>1. How to construct the LL(1) parsing table.<br/>2. How to show that the resulting grammar is LL(1)<br/>3. How to remove the left recursion<br/>4. How to construct the first and follow sets for the nonterminals of the resulting grammar.<br/></p><br/></div><div class="container"><p><strong>Answer</strong></p><p>Total answers posted by the expert is: 656</p><html>
+<head></head>
+<body>
+<p><span style="line-height: 13px;">1)----------------------<img alt="We follow the rules that we saw in class to construct the LL(1) parsing table M
+(a)
+For each production A-+ α. ifa E First(α)" border="0" class="mceBlock" src="https://media.cheggcdn.com/study/202/20296aa9-77a7-49f3-b186-8a61ea9f4d42/59f3f908-4a6f-4b23-8ebe-1ceb8bf548ab.png"/><img alt="We get the following table
+Ldentifier ber S
+lexp
+MoT
+Iist
+lexp-seq
+lexpIist
+Jexpaom
+lexpatom
+atoidentifier atomnumber
+list → " border="0" class="mceBlock" src="https://media.cheggcdn.com/study/6ae/6aef21d4-f9fe-473c-a349-5faa9d845fe4/918e4324-1bdc-42ea-88dc-0284e810bdbd.png"/>2)--------------------------<img alt="We use the theorem on page 178 of Louden:
+A grammar is LL(1) if the following conditions are satisfied
+and i yj
+(b) Far even," border="0" class="mceBlock" src="https://media.cheggcdn.com/study/74d/74dd417a-4948-4002-9006-cd088444b84d/1339bdd5-a2df-4fa8-a001-a58959d792cd.png"/></span></p>
+<p><span style="line-height: 13px;">3)-----------------</span></p>
+<p><span style="line-height: 13px;">The only left-recursive production is lexp-seq ! lexp-seq lexp. We create a new nonterminal lexp-seq0<br/>and replace the productions for lexp-seq to produce the new grammar<br/>lexp -&gt; atom | list<br/>atom -&gt; number | identifier<br/>list -&gt; (lexp-seq)<br/>lexp-seq -&gt; lexp lexp-seq<br/>lexp-seq -&gt; lexp lexp-seq<br/></span></p>
+<p>4)--------------------------------</p>
+<p><span style="line-height: 13px;"><img alt="The start symbol is lexp. Using the algorithms that we saw in class, we get the sets
+First(lexp)
+-number,identifier.(
+First(a" border="0" class="mceBlock" src="https://media.cheggcdn.com/study/af2/af2c9d0d-9a7b-47a7-8e3a-570ef3aece08/85542662-4b71-4347-8f5f-21f8d5b73baa.png"/><img alt="Follow(atom)-
+- fnumber, identifier.(.). $
+- {number, identifier, (). $)
+Follow(list)
+Follow (lexp-seq)
+Follow(Ierp-Seq)
+{ ) " border="0" class="mceBlock" src="https://media.cheggcdn.com/study/c32/c32625fa-b37d-4718-ac0b-8c1e1e8cc974/c94cada0-a866-4f16-b347-ead84b1ec316.png"/><br/></span><br/><br/></p>
+</body>
+</html></div>
